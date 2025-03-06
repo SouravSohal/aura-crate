@@ -1,0 +1,25 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Picker</title>
+    </head>
+    <body>
+        <input type="color" id="colorPicker">
+        <button id="saveColor">Save Changes</button>
+        <script>
+            const { ipcRenderer } = require("electron");
+            
+            document.getElementById("colorPicker").addEventListener("input", (event) => {
+                let hex = event.target.value.replace("#", "");
+                ipcRenderer.send("select-aura-color", hex);
+            });
+            
+            document.getElementById("saveColor").addEventListener("click", () => {
+                ipcRenderer.send("save-aura-color");
+            });
+        </script>
+    </body>
+    </html>
