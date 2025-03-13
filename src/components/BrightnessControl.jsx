@@ -8,7 +8,7 @@ const BrightnessControl = ({ changeBrightness }) => {
     const brightnessOptions = [
         { level: "off", label: "Off", icon: <MdBrightness1 /> },
         { level: "low", label: "Low", icon: <MdBrightnessLow /> },
-        { level: "Medium", label: "Medium", icon: <MdBrightnessMedium /> },
+        { level: "Med", label: "Med", icon: <MdBrightnessMedium /> },
         { level: "High", label: "High", icon: <MdBrightnessHigh /> },
     ];
 
